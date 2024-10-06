@@ -1,0 +1,72 @@
+To complete your project step-by-step, here’s what you should do along with the relevant technologies and frameworks:
+
+### Step 1: **Set up the environment**
+- **Technologies**: Python
+- **Libraries**: `pandas`, `numpy`
+- **Frameworks**: Jupyter Notebook (for development and testing)
+  
+**Tasks**:
+- Install necessary libraries and set up your workspace.
+- Load the CSV file using `pandas` to access the image URLs and entity columns.
+
+### Step 2: **Download images from URLs**
+- **Technologies**: `requests`, `os`
+  
+**Tasks**:
+- Write a function to download images from the URLs in your CSV file and save them locally for processing.
+
+### Step 3: **Image Preprocessing**
+- **Technologies**: OpenCV or `Pillow`
+  
+**Tasks**:
+- Preprocess images (resize, grayscale, etc.) to optimize them for text extraction. This step helps improve text detection by enhancing image quality.
+
+### Step 4: **Text Detection**
+- **Technologies**: **OpenCV** (for object detection) or **TensorFlow**/ **PyTorch** with a pre-trained model like **EAST** or **CRAFT**.
+  
+**Tasks**:
+- Use a text detection model to find the region of interest (ROI) where the text is located in the image. You can use OpenCV’s `EAST` detector to locate text blocks in the image.
+
+### Step 5: **Text Recognition (OCR)**
+- **Technologies**: **Tesseract OCR**, or **EasyOCR**
+  
+**Tasks**:
+- Apply Optical Character Recognition (OCR) to the detected text regions. This step converts the detected text in images to machine-readable text.
+
+### Step 6: **Entity Mapping**
+- **Technologies**: Python, NLP libraries (optional)
+  
+**Tasks**:
+- For each image, extract the relevant value based on the entity type (e.g., weight, voltage). Use pattern matching or simple rules to map the detected text to the required entity.
+
+### Step 7: **Train a Machine Learning Model (Optional)**
+- **Technologies**: **TensorFlow**, **PyTorch**
+  
+**Tasks**:
+- If accuracy needs improvement, consider training a custom model to learn which regions in an image correspond to each entity type. You could fine-tune an object detection model for this.
+
+### Step 8: **Post-processing and Formatting**
+- **Technologies**: Python
+- **Libraries**: `re` (for regex)
+  
+**Tasks**:
+- Clean and format the extracted text to ensure it matches the expected format (e.g., “2.5 V” for voltage).
+  
+### Step 9: **Output Results**
+- **Technologies**: `pandas`
+  
+**Tasks**:
+- Save the results to a CSV file in the required format, similar to the `sample_test_out.csv` you were provided.
+
+### Step 10: **Validation**
+- **Technologies**: Sanity check script provided in the competition
+  
+**Tasks**:
+- Run the sanity checker on the output file to ensure the formatting is correct.
+
+### Summary of Technologies:
+- **Image Processing**: OpenCV, Pillow
+- **Text Detection**: OpenCV (EAST), CRAFT, TensorFlow, PyTorch
+- **Text Recognition (OCR)**: Tesseract, EasyOCR
+- **Machine Learning (Optional)**: TensorFlow, PyTorch
+- **Data Handling**: pandas, numpy
